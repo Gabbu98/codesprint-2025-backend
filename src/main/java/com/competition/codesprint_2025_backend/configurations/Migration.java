@@ -1,6 +1,7 @@
 package com.competition.codesprint_2025_backend.configurations;
 
 import com.competition.codesprint_2025_backend.persistence.models.TransactionModel;
+import com.competition.codesprint_2025_backend.persistence.repositories.TransactionRepository;
 import com.competition.codesprint_2025_backend.services.TransactionCategorizerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -26,6 +27,8 @@ public class Migration {
     @Autowired
     private TransactionCategorizerService transactionCategorizerService;
 
+    @Autowired
+    private TransactionRepository transactionRepository;
     /**
      * Reads transactions from a CSV file
      *
@@ -105,6 +108,7 @@ public class Migration {
     public void migrateData(ApplicationReadyEvent ctx) {
         List<TransactionModel> transactionModels = readTransactionsFromFile("src/main/resources/static/codesprint_open_2025_sample_data.csv");
         transactionModels = transactionCategorizerService.categorizeTransactions(transactionModels);
-        System.out.println();
+        transactionRepository.deleteAll();
+        transactionRepository.insert(transactionModels);
     }
 }

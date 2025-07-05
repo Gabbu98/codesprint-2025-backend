@@ -13,5 +13,5 @@ spring:
           # max-tokens: 500 # Uncomment and adjust if you want to limit response length
 
 server:
-  address: 0.0.0.0
+#  address: 0.0.0.0
   port: 8085
