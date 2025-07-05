@@ -12,9 +12,9 @@ server:
   port: 8085
 
 whatsapp:
-  token:
-  to:  # enter phone number recipient and make sure to include in whatsapp business api
-  accountId:
+  token: EAAVVXi87S6wBPBPTcx7Kxcpxjeo08HvO62mYj80qvTwU8vVjQyqZBQTdtgWF1ThQcBew9x2BxKaBZC7rxvBkx9ZAyCAX6osO6eZChIrjiyXXpBR1jQE9JmJZC55ZCiTEWi3ffgWsk0ISKzlYOvkxKbmAt92up9ze4SHvi2gdHIrM6eZC7s3NseW5So5Xh5068oUvWD9l1AFZAqX227iziJZBkl7S28nWJoUXAdUk3mwaKKJUDaLoZD
+  to: 35679820028 # enter phone number recipient and make sure to include in whatsapp business api
+  accountId: 669393152930636
 
 alert:
   loss:
