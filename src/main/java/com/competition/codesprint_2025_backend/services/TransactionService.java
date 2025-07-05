@@ -86,4 +86,15 @@ public class TransactionService {
         return DateTimeFormatter.ofPattern("yyyy-MM")
                 .format(date.atOffset(ZoneOffset.UTC));
     }
+
+    /**
+     * Gets recent transactions limited by count
+     */
+    public List<TransactionModel> getRecentTransactions(int limit) {
+        return transactionRepository.findAll()
+                .stream()
+                .sorted((t1, t2) -> t2.getDate().compareTo(t1.getDate())) // Sort by date desc
+                .limit(limit)
+                .collect(Collectors.toList());
+    }
 }
