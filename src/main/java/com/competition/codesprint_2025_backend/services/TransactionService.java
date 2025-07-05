@@ -75,6 +75,10 @@ public class TransactionService {
         return monthlyTotals;
     }
 
+    public List<TransactionModel> getByType(String type) {
+        return this.transactionRepository.findByType(type);
+    }
+
     /**
      * Helper method to format transaction date to YYYY-MM string
      */
