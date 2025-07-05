@@ -47,8 +47,6 @@ public class AIService {
                 .content();
 
         return new SpendingRecommendation(
-                categoryPercentages,
-                monthlyTrends,
                 aiResponse,
                 extractPriorityCategory(categoryPercentages),
                 extractActionableSteps(aiResponse)

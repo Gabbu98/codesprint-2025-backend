@@ -12,8 +12,7 @@ public class SpendingRecommendation {
     private SpendingRecommendation() {
     }
 
-    public SpendingRecommendation(
-                                  String aiAnalysis,
+    public SpendingRecommendation(String aiAnalysis,
                                   String priorityCategory,
                                   List<String> actionableSteps) {
 
