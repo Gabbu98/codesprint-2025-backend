@@ -1,0 +1,17 @@
+spring:
+  data:
+    mongodb:
+      database: codesprint
+      uri: mongodb://localhost:27017/codesprint
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY} # Still recommended to use an environment variable for security
+#      chat:
+#        options:
+#          model: gpt-4o
+          # temperature: 0.7 # Uncomment and adjust if you want to control creativity
+          # max-tokens: 500 # Uncomment and adjust if you want to limit response length
+
+server:
+  address: 0.0.0.0
+  port: 8085
