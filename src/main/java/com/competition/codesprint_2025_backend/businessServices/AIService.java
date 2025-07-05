@@ -100,7 +100,7 @@ public class AIService {
                                        Map<String, Map<String, Double>> categoryTrends) {
 
         StringBuilder prompt = new StringBuilder();
-        prompt.append("You are a personal finance advisor. Analyze the following spending data and provide actionable recommendations.\n\n");
+        prompt.append("You are a personal finance advisor. Analyze the following spending data and tell me in one or two sentences which category is the most problematic and during which month and provide actionable recommendations in bullet points\n\n");
 
         // Current category breakdown
         prompt.append("CURRENT SPENDING BREAKDOWN BY CATEGORY:\n");
