@@ -2,6 +2,7 @@ package com.competition.codesprint_2025_backend.controllers;
 
 import com.competition.codesprint_2025_backend.controllers.responses.TransactionCategoryResponse;
 import com.competition.codesprint_2025_backend.mappers.TransactionsMapper;
+import com.competition.codesprint_2025_backend.persistence.models.TransactionModel;
 import com.competition.codesprint_2025_backend.services.TransactionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,6 +19,11 @@ public class TransactionsController {
 
     public TransactionsController(TransactionService transactionService) {
         this.transactionService = transactionService;
+    }
+
+    @GetMapping
+    public ResponseEntity<List<TransactionModel>> getTransactions(){
+        return ResponseEntity.ok(transactionService.getRecentTransactions(10));
     }
 
     @GetMapping("/spending-percentages")

@@ -51,7 +51,7 @@ public class SavingsGoalsController {
     @PostMapping
     public ResponseEntity<Void> createSavingGoal(@Valid @RequestBody CreateSavingGoalRequest request) {
         savingGoalService.addSavingGoal(request.getName(), request.getTarget(), request.getSaved());
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.noContent().build(); // can be created() but i decided to reload all savings since i do not expect too many
     }
 
     /**
